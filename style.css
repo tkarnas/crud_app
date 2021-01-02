@@ -1,0 +1,135 @@
+*{
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    
+}
+
+header{
+    background-color: black;
+    color:green;
+    height: 5rem;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color:greenyellow;
+}
+
+ul{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    display:inline-block;
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 2rem;
+}
+
+footer{
+    height: 5rem;
+    background-color: black;
+    color:greenyellow;
+}
+
+.footer-link{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+header img{
+width: 5rem;
+}
+a:hover{
+    color:green;
+}
+
+main{
+    display: block;
+    height: 50rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+
+.hero-image{
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    background-image: url("./imgs/razer.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity:0.8;
+}
+
+.info{
+    height: 100%;
+    color: whitesmoke;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.jedan{
+    height: 100%;
+    flex:1;
+    margin:3rem;
+}
+.dva{
+    height: 100%;
+    flex:3;
+}
+.tri{
+    height: 100%;
+    flex:1;
+    margin:3rem;
+}
+
+small {
+	color: red;
+}
+
+label {
+    display: block;
+    color: white;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=file], select, textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid rgb(255, 254, 254);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 95%;
+}
+
+input[type=submit] {
+    display: block;
+	background-color: #16ee1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 25%;
+    margin: 0 auto;
+}
+
+input[type=submit]:hover {
+    background-color: #24f02e;
+}
