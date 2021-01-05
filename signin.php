@@ -1,4 +1,5 @@
 <?php 
+
 	print '
 	<h1>Sign In form</h1>
 	<div id="signin">';
@@ -8,10 +9,10 @@
 		<form action="" name="myForm" id="myForm" method="POST">
 			<input type="hidden" id="_action_" name="_action_" value="TRUE">
 
-			<label for="username">Username:*</label>
+			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" value="" pattern=".{5,10}" required>
 									
-			<label for="password">Password:*</label>
+			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" value="" pattern=".{4,}" required>
 									
 			<input type="submit" value="Submit">
@@ -20,7 +21,7 @@
 	else if ($_POST['_action_'] == TRUE) {
 		
 		$query  = "SELECT * FROM users";
-		$query .= " WHERE username='" .  $_POST['username'] . "' AND archive='N'";
+		$query .= " WHERE username='" .  $_POST['username'] . "' AND archive='Y'";
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		

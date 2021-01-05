@@ -27,8 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="description" content="some description">
-        <meta name="keywords" content="keyword 1, keyword 2, keyword 3, keyword 4, ...">
+        <meta name="description" content="This is app about Razer, gaming product company. This app is made just for personal use.">
+        <meta name="keywords" content="razer, razer_crud_app, razer news, gaming">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
         
