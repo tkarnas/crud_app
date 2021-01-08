@@ -2,7 +2,7 @@
 	
 	# Update user profile
 	if (isset($_POST['edit']) && $_POST['_action_'] == 'TRUE') {
-		$query  = "UPDATE users SET firstname='" . $_POST['firstname'] . "', lastname='" . $_POST['lastname'] . "', email='" . $_POST['email'] . "', username='" . $_POST['username'] . "', country='" . $_POST['country'] . "', archive='" . $_POST['archive'] . "'";
+		$query  = "UPDATE users SET firstname='" . $_POST['firstname'] . "', lastname='" . $_POST['lastname'] . "', email='" . $_POST['email'] . "', username='" . $_POST['username'] . "', country='" . $_POST['country'] . "', archive='" . $_POST['archive'] . "', role='" . $_POST['role'] . "'" ;
         $query .= " WHERE id=" . (int)$_POST['edit'];
         $query .= " LIMIT 1";
         $result = @mysqli_query($MySQL, $query);
@@ -43,6 +43,14 @@
 		<p><b>First name:</b> ' . $row['firstname'] . '</p>
 		<p><b>Last name:</b> ' . $row['lastname'] . '</p>
 		<p><b>Username:</b> ' . $row['username'] . '</p>';
+		if($row['role'] == 1){
+			print '<p><b>Role:</b> ' . "Administrator" . '</p>';
+		}
+		else if($row['role'] == 2) {
+            print '<p><b>Role:</b> ' . "Editor" . '</p>';
+        } else {
+            print '<p><b>Role:</b> ' . "User" . '</p>';
+        }
 		$_query  = "SELECT * FROM countries";
 		$_query .= " WHERE country_code='" . $row['country'] . "'";
 		$_result = @mysqli_query($MySQL, $_query);
@@ -63,25 +71,28 @@
 			
 			print '
 			<h2>Edit user profile</h2>
-			<form action="" id="registration_form" name="registration_form" method="POST">
+			<form class="forma" action="" id="registration_form" name="registration_form" method="POST">
 				<input type="hidden" id="_action_" name="_action_" value="TRUE">
 				<input type="hidden" id="edit" name="edit" value="' . $_GET['edit'] . '">
 				
 				<label for="fname">First Name *</label>
-				<input type="text" id="fname" name="firstname" value="' . $row['firstname'] . '" placeholder="Your name.." required>
+				<input type="text" id="fname" name="firstname" value="' . $row['firstname'] . '" placeholder="Your name" required>
 
 				<label for="lname">Last Name *</label>
-				<input type="text" id="lname" name="lastname" value="' . $row['lastname'] . '" placeholder="Your last natme.." required>
+				<input type="text" id="lname" name="lastname" value="' . $row['lastname'] . '" placeholder="Your last natme" required>
 					
 				<label for="email">Your E-mail *</label>
-				<input type="email" id="email" name="email"  value="' . $row['email'] . '" placeholder="Your e-mail.." required>
+				<input type="email" id="email" name="email"  value="' . $row['email'] . '" placeholder="Your e-mail" required>
 				
 				<label for="username">Username *<small>(Username must have min 5 and max 10 char)</small></label>
 				<input type="text" id="username" name="username" value="' . $row['username'] . '" pattern=".{5,10}" placeholder="Username.." required><br>
+
+				<label for="role">Role</label>
+				<input type="number" id="role" name="role"  value="' . $row['role'] . '" placeholder="Role" required>
 				
 				<label for="country">Country</label>
 				<select name="country" id="country">
-					<option value="">molimo odaberite</option>';
+					<option value="">Country</option>';
 					#Select all countries from database webprog, table countries
 					$_query  = "SELECT * FROM countries";
 					$_result = @mysqli_query($MySQL, $_query);
@@ -101,7 +112,7 @@
 				
 				<input type="submit" value="Submit">
 			</form>
-			<p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Back</a></p>';
+			';
 		}
 		else {
 			print '<p>Zabranjeno</p>';
