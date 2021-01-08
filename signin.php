@@ -21,9 +21,10 @@
 	else if ($_POST['_action_'] == TRUE) {
 		
 		$query  = "SELECT * FROM users";
-		$query .= " WHERE username='" .  $_POST['username'] . "' AND archive='Y'";
+		$query .= " WHERE username='" . $_POST['username'] ."'  AND archive='N'";
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
+		// print_r($row);
 		
 		if (password_verify($_POST['password'], $row['password'])) {
 			#password_verify https://secure.php.net/manual/en/function.password-verify.php

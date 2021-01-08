@@ -4,7 +4,9 @@
 	
 	# Start session
     session_start();
-	
+
+    #functions
+	include ("functions.php");
 	# Database connection
 	include ("dbconn.php");
 	
