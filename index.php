@@ -59,17 +59,20 @@ else if ($menu == 2) { include("news.php"); }
 # About
 else if ($menu == 3) { include("about.php"); }
 
+# Crypto api
+else if ($menu == 4) { include("beersApi.php"); }
+
 # About us
-else if ($menu == 4) { include("contact.php"); }
+else if ($menu == 5) { include("contact.php"); }
 
 # Register
-else if ($menu == 5) { include("register.php"); }
+else if ($menu == 6) { include("register.php"); }
 
 # Signin
-else if ($menu == 6) { include("signin.php"); }
+else if ($menu == 7) { include("signin.php"); }
 
 # Admin webpage
-else if ($menu == 7) { include("admin.php"); }
+else if ($menu == 8) { include("admin.php"); }
        ?>
         
 

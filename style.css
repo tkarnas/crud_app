@@ -83,7 +83,6 @@ figcaption{
     margin-left: 3rem;
 }
 
-
 .hero-image{
     height: 100%;
     width: 80%;
@@ -161,14 +160,20 @@ input[type=submit]:hover {
     width: 50vw;
     margin: 0 auto;
 }
-
+figure {
+	padding: 0.5em;
+	margin: 0 1em 0.5em 1em;
+	float: left;
+	width: 50%;
+	border: 1px solid black;
+}
 
 /* ADMINISTRATION WEB */
 .AddLink {
    
 }
 /* Table */
-	table {
+	.table {
 		background: black;
 		border-collapse: separate;
 		font-size: 12px;
